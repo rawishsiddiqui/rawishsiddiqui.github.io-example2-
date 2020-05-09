@@ -1,29 +1,51 @@
-<!DOCTYPE html>
 <html>
-<body>
-<form name="myForm">
-<input type="text" id="myText2" value="Data Validation" readonly>
-<input type="number" id="myNumb1" value="0" onblur="validateForm(this.id)">
-<input type="number" id="myNumb2" value="0" onblur="validateForm(this.id)">
-<input type="number" id="myNumb3" value="0" readonly>
-<input type="number" id="myNumb4" value="0" readonly>
+    <head>
+         <script type="text/javascript" src="zcalc.js"></script>
+        <title>Your Acoountings</title>
+        <img src="logo.png">
+    <hr/>
+    </head>
+    <body>
+        
+        <input type="button" id="btnsubmit" onclick="OnCalculateAll()" value="Calculate My Zakat" />
+        <label for="number">Total Payable Zakaat</label>
+        <input type="number" id="Total_Payable_Zakaat" value="000000" readonly/>
+        <u style="color: darkblue;"><center><h3 style="color: darkblue;"> ZAKAT ON GOLD  (2.5%) </h3></center>
+        </u>
+        <hr/>
+        <form>            
+            <div>
+                <label for="number">24 Carat Gold/Jewelry</label>
+                <input type="number" id="Gold_24_Weight"  onblur="myNumberValidation()"/>
+                <input type="number" id="Gold_24_PriceInGram"  />
+                <input type="number" id="Gold_24_EstimatedValue" value="000000" readonly/>
+                <input type="number" id="Gold_24_ZakatPayable" value="000000" readonly/>
+                    
+            </div>
+            <div>
+                <label for="number">22 Carat Gold/Jewelry</label>
+                <input type="number" id="Gold_22_Weight"  />
+                <input type="number" id="Gold_22_PriceInGram"  />
+                <input type="number" id="Gold_22_EstimatedValue" value="000000" readonly/>
+                <input type="number" id="Gold_22_ZakatPayable"value="000000" readonly/>
+                    
+            </div>
+            <div>
+                <label for="number">21 Carat Gold/Jewelry</label>
+                <input type="number" id="Gold_21_Weight" />
+                <input type="number" id="Gold_21_PriceInGram" />
+                <input type="number" id="Gold_21_EstimatedValue" value="000000"readonly/>
+                <input type="number" id="Gold_21_ZakatPayable"value="000000" readonly/>
 
-<script type='text/javascript'>
+            </div>
+            <div>
+                <label for="number">18 Carat Gold/Jewelry</label>
+                <input type="number" id="Gold_18_Weight" />
+                <input type="number" id="Gold_18_PriceInGram" />
+                <input type="number" id="Gold_18_EstimatedValue" value="000000"readonly/>
+                <input type="number" id="Gold_18_ZakatPayable"value="000000" readonly/>
 
-function validateForm(id){
-  var z = document.forms["myForm"][id].value;
-
-  if(!/^[0-9]+$/.test(z)){
-    
-document.forms["myForm"][id].value="0";
-document.forms["myForm"]["myText2"].value=id+" - Invalid Data Entered";
-alert("Please only enter numeric characters Only! (Allowed input:0-9)")
-  }
-else 
-document.forms["myForm"]["myText2"].value=id+" - Valid Data";
-
-}
-</script>
-
-</body>
+            </div>
+        </form>
+    </body>
 </html>
